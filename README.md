@@ -14,7 +14,7 @@ Companion code for: *Multi-cohort landscape of dysregulated lactylation-related 
 R_scripts/    Full analysis chain, one script per stage (run in order):
               M0   environment setup (package dependencies)
               M1   stages 1-3: GEO parsing + preprocessing + limma (GSE57338)
-              M2   stage 4: LASSO + four-scenario ROC validation
+              M2   stage 4: LASSO + four validation scenarios
               M3   stage 5: WGCNA + module enrichment
               M4   stage 7: functional enrichment + immune infiltration
               M5   stage 8: immune three-method sensitivity (MCP-counter/EPIC/subset)
@@ -26,13 +26,21 @@ R_scripts/    Full analysis chain, one script per stage (run in order):
               M11  GTEx v8 left-ventricle expression boundary (Suppl. Table S8)
               M12  donor-inflammation-stratified immune sensitivity (Suppl. Table S9 / Fig. S1)
               Appendix1_replot_figures.R   optional: base versions of Figures 4B/5C/7
-              CIBERSORT_v1.04.R           official CIBERSORT source (Newman et al. 2015)
               opengwas_config.R           OpenGWAS API configuration (MR modules)
-data/         lrg332.txt (332 curated LRG symbols) + LM22.txt (CIBERSORT reference
-              matrix); the GEO series-matrix files are downloaded from GEO per script M1
+data/         lrg332.txt (332 curated LRG symbols); the GEO series-matrix files are
+              downloaded from GEO per script M1
 results/      key result tables reproduced by the pipeline (Table 3 and MR
               supplementary tables), CSV format
 ```
+
+## Note on CIBERSORT
+
+The CIBERSORT v1.04 source code and the LM22 reference matrix are **not redistributed** in this
+repository (Stanford license terms). Users who wish to rerun the immune-deconvolution stage (M4,
+stage 7) should register for free academic access at <https://cibersortx.stanford.edu>, download
+`CIBERSORT.R` (v1.04) and `LM22.txt`, and place them at `R_scripts/CIBERSORT_v1.04.R` and
+`data/LM22.txt`. M4 checks for these files and points to this note if they are missing; all other
+modules run without them.
 
 ## Requirements
 
