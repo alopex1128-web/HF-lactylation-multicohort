@@ -15,9 +15,11 @@
 # [Prerequisites]
 #   (1) stages 1-6 completed (output/ contains GSE57338_processed.rds,
 #       GSE57338_HFvsNF_all.csv, GSE57338_DLRGs.csv, LASSO_coefficients.csv)
-#   (2) place the two bundled files in DIR (same level as the LRG list):
+#   (2) place two externally obtained files in DIR (not redistributed in this
+#       repository under the Stanford license; see README "Note on CIBERSORT"):
 #       CIBERSORT_v1.04.R and LM22.txt
-#       (official CIBERSORT.R v1.04 + LM22 reference matrix, 547 genes x 22 cell types)
+#       (official CIBERSORT.R v1.04 + LM22 reference matrix, 547 genes x 22 cell types,
+#        free academic download at https://cibersortx.stanford.edu)
 #
 # [Methods (consistent with the paper)]
 #   ORA: clusterProfiler enrichGO (BP/CC/MF, BH, q<0.05);
